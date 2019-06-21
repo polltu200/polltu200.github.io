@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='amebo.js'></script>
+    <script src='iosJSnode.js'></script>
+</head>
+<script>
+function Gameboy_Load()
+{
+gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
+}
+</script>
+<body onload='Gameboy_Load()'>
+	<canvas id="gb-screen" width="160" height="144"></canvas>
+</body>
+</html>
