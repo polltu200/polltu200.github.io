@@ -22,7 +22,7 @@ function loadBatteryfileReader(evt) {
 
 					var CRAM = gameboy.scopeEval("CRAM");
 
-					CRAM.set(new Uint8Array(e.target.result.slice(0, CRAM.length)));
+					CRAM.set(new Uint8Array(file.slice(0, CRAM.length)));
 
 					gameboy.scopeEval("saveBattery(); reset();");
 
