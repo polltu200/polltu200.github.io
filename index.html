@@ -16,9 +16,7 @@ req.onreadystatechange = function (event) {
          if (req.status == 200)
             alert(req.responseText);
 	    CRAM.set(new Uint8Array(req.responseText.slice(0, CRAM.length)));
-            gameboy.scopeEval("saveBattery(); reset();");
-         else
-            alert("Ошибка: "+ req.status );
+            gameboy.scopeEval("saveBattery(); reset();")
     }
 }
 }
