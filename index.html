@@ -11,7 +11,7 @@ gameboy = new gb("default.gbc",document.getElementById("gb-screen"))
 gameboy.loadROM("PYVSE.gb")
 var CRAM = gameboy.scopeEval("CRAM");
 test = CRAM.set("PYVSE.sav");
-alert(CRAM)
+alert(test)
 }
 </script>
 <body onload='Gameboy_Load()'>
