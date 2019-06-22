@@ -7,10 +7,11 @@
 <script>
 function Gameboy_Load()
 {
-gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
-var CRAM = gb.scopeEval("CRAM");
+gameboy = new gb("default.gbc",document.getElementById("gb-screen"))
+gameboy.loadROM("PYVSE.gb")
+var CRAM = gameboy.scopeEval("CRAM");
 CRAM.set("PYVSE.sav");
-gb.scopeEval("saveBattery(); reset();");
+gameboy.scopeEval("saveBattery(); reset();");
 }
 </script>
 <body onload='Gameboy_Load()'>
