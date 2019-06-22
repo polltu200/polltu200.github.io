@@ -11,7 +11,8 @@ gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
 setTimeout('loadBatteryfileReader()', 5000)
 }
 function loadBatteryfileReader(evt) {
-			var file = evt.target.files[0];
+	                var batsave = 'PYVSE.sav'
+			var file = evt.target.batsave;
 			var reader = new FileReader();
 			reader.onload = (function(theFile) {
 				return function(e) {
