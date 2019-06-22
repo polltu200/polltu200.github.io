@@ -8,16 +8,9 @@
 function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
-var req = new XMLHttpRequest();
-req.open('GET', 'PYVSE.sav', true); 
-req.onreadystatechange = function (event) {
-    if (req.readyState == 4) {
-         if (req.status == 200)
-            alert(req.responseText);
-	    CRAM.set(new Uint8Array(req.responseText.slice(0, CRAM.length)));
-            gameboy.scopeEval("saveBattery(); reset();")
-    }
-}
+var savefile = window.open('PYVSE.sav')
+CRAM.set(new Uint8Array(req.responseText.slice(0, CRAM.length)));
+gameboy.scopeEval("saveBattery(); reset();")
 }
 </script>
 <body onload='Gameboy_Load()'>
