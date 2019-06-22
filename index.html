@@ -12,9 +12,10 @@ gameboy.onstartload = InsertBatteryCatrige()
 }
 function InsertBatteryCatrige()
 {
- alert('Battery inserted!')
- var save = window.open('PYVSE.sav')
- alert(save)
+alert('Battery inserted!')
+var CRAM = gameboy.scopeEval("CRAM");
+CRAM.set(new Uint8Array(e.target.result.slice(0, CRAM.length)));
+gameboy.scopeEval("saveBattery(); reset();");
 }
 </script>
 <body onload='Gameboy_Load()'>
