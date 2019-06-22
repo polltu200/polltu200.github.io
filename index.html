@@ -8,7 +8,7 @@
 function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
-gameboy.onload = InsertBatteryCatrige()
+gameboy.onstartload = InsertBatteryCatrige()
 }
 function InsertBatteryCatrige()
 {
