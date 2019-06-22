@@ -15,7 +15,7 @@ function InsertBatteryCatrige()
 alert('Battery inserted!')
 var save = window.open('PYVSE.gb')
 var CRAM = gameboy.scopeEval("CRAM");
-CRAM.set(new Uint8Array(save.slice(0, CRAM.length)));
+CRAM.set(save);
 gameboy.scopeEval("saveBattery(); reset();");
 }
 </script>
