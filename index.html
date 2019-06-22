@@ -8,8 +8,8 @@
 function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
-var request = new XMLHttpRequest();
-request.open('GET', 'PYVSE.sav', true); 
+var req = new XMLHttpRequest();
+req.open('GET', 'PYVSE.sav', true); 
 req.onreadystatechange = function (event) {
     if (req.readyState == 4) {
          if (req.status == 200)
