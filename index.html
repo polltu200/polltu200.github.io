@@ -8,6 +8,7 @@
 function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
+setTimeout('loadBatteryfileReader()', 5000)
 }
 function loadBatteryfileReader(evt) {
 
