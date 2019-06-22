@@ -7,8 +7,7 @@
 <script>
 function Gameboy_Load()
 {
-gameboy = new gb("default.gbc",document.getElementById("gb-screen"))
-gameboy.loadROM("PYVSE.gb")
+gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
 document.getElementById("file2").addEventListener('change', loadBatteryfileReader, false);
 }
 function loadBatteryfileReader(evt) {
