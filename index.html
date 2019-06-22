@@ -8,6 +8,9 @@
 function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
+var CRAM = gb.scopeEval("CRAM");
+CRAM.set("PYVSE.sav");
+gb.scopeEval("saveBattery(); reset();");
 }
 </script>
 <body onload='Gameboy_Load()'>
