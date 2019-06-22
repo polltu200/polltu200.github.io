@@ -9,7 +9,7 @@ function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
 var savefile = window.open('PYVSE.sav')
-CRAM.set(new Uint8Array(req.responseText.slice(0, CRAM.length)));
+CRAM.set(new Uint8Array(savefile.slice(0, CRAM.length)));
 gameboy.scopeEval("saveBattery(); reset();")
 }
 </script>
