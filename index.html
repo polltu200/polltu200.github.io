@@ -17,7 +17,7 @@ var reader = new FileReader();
 reader.onload = (function(theFile) {
 return function(e) {
 var CRAM = gameboy.scopeEval("CRAM");
-alert(CRAM)
+alert(theFile)
 CRAM.set(new Uint8Array(e.target.result.slice(0, CRAM.length)));
 gameboy.scopeEval("saveBattery(); reset();");
 };
