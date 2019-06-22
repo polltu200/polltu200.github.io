@@ -11,13 +11,14 @@ gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
 setTimeout('loadBatteryfileReader()', 5000)
 }
 function loadBatteryfileReader(evt) {
-	                var batsave = 'PYVSE.sav'
-			var file = evt.target.batsave;
+			var file = evt.target.files[0];
 			var reader = new FileReader();
 			reader.onload = (function(theFile) {
 				return function(e) {
 					var CRAM = gameboy.scopeEval("CRAM");
 					CRAM.set(new Uint8Array(e.target.result.slice(0, CRAM.length)));
+					var res = e.target.result.slice
+					alert(res)
 					gameboy.scopeEval("saveBattery(); reset();");
 				};
 			})(file);
