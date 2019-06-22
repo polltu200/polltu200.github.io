@@ -8,7 +8,11 @@
 function Gameboy_Load()
 {
 gameboy = new gb("PYVSE.gb",document.getElementById("gb-screen"))
-gameboy.loadROMBuffer('','PYVSE.sav')
+gameboy.onload = InsertBatteryCatrige()
+}
+function InsertBatteryCatrige()
+{
+ alert('Battery inserted!')
 }
 </script>
 <body onload='Gameboy_Load()'>
