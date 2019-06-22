@@ -9,6 +9,7 @@ function Gameboy_Load()
 {
 gameboy = new gb("default.gbc",document.getElementById("gb-screen"))
 gameboy.loadROM("PYVSE.gb")
+document.getElementById("file2").addEventListener('change', loadBatteryfileReader, false);
 }
 function loadBatteryfileReader(evt) {
 var file = evt.target.files[0];
@@ -22,7 +23,6 @@ gameboy.scopeEval("saveBattery(); reset();");
    })(file);
      reader.readAsArrayBuffer(file);
 }
-document.getElementById("file2").addEventListener('change', loadBatteryfileReader, false);
 </script>
 <body onload='Gameboy_Load()'>
 	<canvas id="gb-screen" width="160" height="144">Not support canvas!!!</canvas>
