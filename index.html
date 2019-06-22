@@ -13,10 +13,10 @@ document.getElementById("file2").addEventListener('change', loadBatteryfileReade
 }
 function loadBatteryfileReader(evt) {
 var file = evt.target.files[0];
-alert(file)
 var reader = new FileReader();
 reader.onload = (function(theFile) {
 return function(e) {
+alert(e)
 var CRAM = gameboy.scopeEval("CRAM");
 CRAM.set(new Uint8Array(e.target.result.slice(0, CRAM.length)));
 gameboy.scopeEval("saveBattery(); reset();");
