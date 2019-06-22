@@ -12,6 +12,7 @@ gameboy.loadROM("PYVSE.gb")
 document.getElementById("file2").addEventListener('change', loadBatteryfileReader, false);
 }
 function loadBatteryfileReader(evt) {
+alert(evt)
 var file = evt.target.files[0];
 var reader = new FileReader();
 reader.onload = (function(theFile) {
