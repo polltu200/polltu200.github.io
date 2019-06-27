@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <script src='detect.js'></script>
+</head>
+<script>
+function Detect_Browser()
+{
+var client = detect.parse(navigator.userAgent);
+if(client.device.type==="Mobile") location = "iphone.html"
+else alert("Your device is not support!!! \nВаше устройство не поддерживается!!!")
+}
+</script>
+<body onload="Detect_Browser()">
+</body>
+</html>
