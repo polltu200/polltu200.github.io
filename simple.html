@@ -53,7 +53,7 @@ var event = jQuery.Event('keydown');
 event.which = 13; 
 event.charCode = 0;
 event.keyCode = 13;
-setTimeout('jQuery("#keyDownHandler").trigger(event)', 30000);
+setTimeout('jQuery("keyDownHandler").trigger(event)', 30000);
 	}
 		
 		document.getElementById("file").addEventListener('change', loadROMfileReader, false);
