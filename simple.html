@@ -22,12 +22,6 @@
 	<input type="file" id="file2"></input>
 	
 	<script>
-var event = jQuery.Event('keydown');
-event.which = 13; 
-event.charCode = 0;
-event.keyCode = 13;
-setTimeout('jQuery("#keyDownHandler").trigger(event)', 30000);
-		
 		function loadROMfileReader(evt) {
 			var file = evt.target.files[0];
 			var reader = new FileReader();
@@ -51,7 +45,17 @@ setTimeout('jQuery("#keyDownHandler").trigger(event)', 30000);
 			})(file);
 			reader.readAsArrayBuffer(file);
 		}
-
+ 
+		gameboy.onload = pressStart;
+function pressStart()
+	{
+var event = jQuery.Event('keydown');
+event.which = 13; 
+event.charCode = 0;
+event.keyCode = 13;
+setTimeout('jQuery("#keyDownHandler").trigger(event)', 30000);
+	}
+		
 		document.getElementById("file").addEventListener('change', loadROMfileReader, false);
 		document.getElementById("file2").addEventListener('change', loadBatteryfileReader, false);
 	</script>
