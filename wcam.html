@@ -1,0 +1,46 @@
+<html>
+<meta charset="UTF-8">
+<body>
+
+<video id="video" autoplay hidden></video>
+<canvas id="canvas" width="800" height="600"></canvas>
+
+<script>
+
+//var notification0 = new Notification('Привет, мир!');
+
+if (Notification.permission !== "granted") {
+  Notification.requestPermission();
+} else {
+  var notification = new Notification('Запрос разрешения к веб-камере!');
+}
+
+
+
+// Получаем доступ к элементам HTML
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// Получаем доступ к веб-камере
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then((stream) => {
+    video.srcObject = stream;
+    video.play();
+  })
+  .catch((error) => {
+    console.error('Ошибка при получении доступа к веб-камере:', error);
+  });
+
+// Каждый раз, когда кадр видео обновляется, копируем его на canvas
+video.addEventListener('canplay', () => {
+  //canvas.width = video.videoWidth;
+  //canvas.height = video.videoHeight;
+  setInterval(() => {
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  }, 1000 / 30); // обновляем изображение каждые 30 кадров в секунду
+});
+</script>
+
+</body>
+</html>
